@@ -10,7 +10,7 @@ Code specific to this project is covered by [The MIT License](http://opensource.
 
 Install
 =======
-Currently, clone the repo and::
+Currently, clone the repo and:
 > $ cd python-farmhash
 > $ sudo python setup.py Install
 
@@ -22,13 +22,13 @@ The package will be hosted on [PyPI](http://pypi.python.org/pypi/farmhash)
 
 Usage
 =====
-The library is pretty simple to use::
+The library is pretty simple to use:
 
->  >>> import farmhash
->  >>> print farmhash.hash64('abc')
+>  import farmhash
+>  print farmhash.hash64('abc')
 >  2640714258260161385
 
-For more details, use ipython::
+For more details, use ipython:
 >    In [1]: import farmhash
 >
 >    In [2]: farmhash.hash64withseed?
