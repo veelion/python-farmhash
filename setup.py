@@ -9,7 +9,7 @@ setup(
     name='farmhash',
     version=".".join([str(x) for x in VERSION]),
     description="Google FarmHash Bindings for Python",
-    long_description=open('README.rst', 'r').read(),
+    long_description=open('README.md', 'r').read(),
     author='Veelion Chong',
     author_email='veelion@gmail.com',
     url='https://github.com/veelion/python-farmhash',
