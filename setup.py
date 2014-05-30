@@ -21,11 +21,9 @@ setup(
             'src/python-farmhash.cc'
         ], extra_compile_args=["-O4"])
     ],
-    setup_requires=["nose>=1.0"],
-    test_suite = "nose.collector",
     classifiers=[
         'Development Status :: 5 - Production/Stable',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
         'Programming Language :: C',
         'Programming Language :: Python',
