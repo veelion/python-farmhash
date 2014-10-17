@@ -6,10 +6,9 @@ from setuptools import setup, find_packages, Extension
 VERSION = (0, 1, 0)
 
 setup(
-    name='farmhash',
+    name='pyfarmhash',
     version=".".join([str(x) for x in VERSION]),
     description="Google FarmHash Bindings for Python",
-    long_description=open('README.md', 'r').read(),
     author='Veelion Chong',
     author_email='veelion@gmail.com',
     url='https://github.com/veelion/python-farmhash',
