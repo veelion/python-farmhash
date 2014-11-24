@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
+#define PY_SSIZE_T_CLEAN
 #include "Python.h"
 
 static PyObject *py_farmhash_Hash32(PyObject *self, PyObject *args);

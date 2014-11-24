@@ -3,13 +3,16 @@
 
 from setuptools import setup, find_packages, Extension
 
-VERSION = (0, 1, 0)
+VERSION = (0, 1, 5)
 
 setup(
-    name='farmhash',
+    name='pyfarmhash',
     version=".".join([str(x) for x in VERSION]),
     description="Google FarmHash Bindings for Python",
     long_description=open('README.md', 'r').read(),
+    data_files=[
+        'README.md',
+    ],
     author='Veelion Chong',
     author_email='veelion@gmail.com',
     url='https://github.com/veelion/python-farmhash',
@@ -19,7 +22,8 @@ setup(
         Extension('farmhash', [
             'src/farmhash.cc',
             'src/python-farmhash.cc'
-        ], extra_compile_args=["-O4"])
+        ], extra_compile_args=["-O4"]
+        )
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

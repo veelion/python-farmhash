@@ -15,21 +15,21 @@ Currently, clone the repo and:
 > $ sudo python setup.py Install  
 
 
-The package will be hosted on [PyPI](http://pypi.python.org/pypi/farmhash)
+The package was hosted on [PyPI](http://pypi.python.org/pypi/pyfarmhash)
 
-> $ pip install farmhash  
-> $ easy_install farmhash  
+> $ pip install pyfarmhash  
+> $ easy_install pyfarmhash  
 
 Usage
 =====
 The library is pretty simple to use:
 
-> import farmhash  
+> import pyfarmhash as farmhash
 > print farmhash.hash64('abc')  
 > 2640714258260161385  
 
 For more details, use ipython:
-> In [1]: import farmhash  
+> In [1]: import pyfarmhash as farmhash 
 > 
 > In [2]: farmhash.hash64withseed?  
 > Type:       builtin_function_or_method  

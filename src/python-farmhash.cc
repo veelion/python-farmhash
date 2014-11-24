@@ -20,6 +20,9 @@
  * THE SOFTWARE.
  */
 
+//for backwards compatibility with python 2.x
+//This notifies python to use Py_ssize_t types with "s#" variables
+#define PY_SSIZE_T_CLEAN
 
 #include <iostream>
 #include <Python.h>
@@ -33,7 +36,7 @@ py_farmhash_Hash32(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
 
     if (!PyArg_ParseTuple(args, "s#", &s, &len))
         return NULL;
@@ -49,7 +52,7 @@ py_farmhash_Hash32WithSeed(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
     uint32_t seed;
 
     if (!PyArg_ParseTuple(args, "s#I", &s, &len, &seed))
@@ -66,7 +69,7 @@ py_farmhash_Hash64(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
 
     if (!PyArg_ParseTuple(args, "s#", &s, &len))
         return NULL;
@@ -87,7 +90,7 @@ py_farmhash_Hash64WithSeed(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
     uint64_t seed;
 
     if (!PyArg_ParseTuple(args, "s#K", &s, &len, &seed))
@@ -109,7 +112,7 @@ py_farmhash_Hash128(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
 
     if (!PyArg_ParseTuple(args, "s#", &s, &len))
         return NULL;
@@ -127,7 +130,7 @@ py_farmhash_Hash128WithSeed(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
     uint64_t seedlow64;
     uint64_t seedhigh64;
 
