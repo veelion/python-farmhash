@@ -24,12 +24,12 @@ Usage
 =====
 The library is pretty simple to use:
 
-> import pyfarmhash as farmhash
+> import farmhash
 > print farmhash.hash64('abc')  
 > 2640714258260161385  
 
 For more details, use ipython:
-> In [1]: import pyfarmhash as farmhash 
+> In [1]: import farmhash 
 > 
 > In [2]: farmhash.hash64withseed?  
 > Type:       builtin_function_or_method  

@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: pyfarmhash
-Version: 0.1.4
+Version: 0.1.5
 Summary: Google FarmHash Bindings for Python
 Home-page: https://github.com/veelion/python-farmhash
 Author: Veelion Chong
