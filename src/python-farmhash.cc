@@ -68,8 +68,9 @@ py_farmhash_Hash64(PyObject *self, PyObject *args)
     const char *s;
     size_t len;
 
-    if (!PyArg_ParseTuple(args, "s#", &s, &len))
+    if (!PyArg_ParseTuple(args, "s", &s))
         return NULL;
+    len = strlen(s);
 
     uint64_t h = Hash64(s, len);
 # if __WORDSIZE == 64
