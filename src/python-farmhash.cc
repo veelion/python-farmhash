@@ -72,6 +72,7 @@ py_farmhash_Hash64(PyObject *self, PyObject *args)
 
     if (!PyArg_ParseTuple(args, "s", &s))
         return NULL;
+    len = strlen(s);
 
     len = strlen(s);
     uint64_t h = Hash64(s, len);
