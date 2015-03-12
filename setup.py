@@ -3,12 +3,17 @@
 
 from setuptools import setup, find_packages, Extension
 
-VERSION = (0, 1, 0)
+VERSION = (0, 1, 9)
 
 setup(
     name='pyfarmhash',
     version=".".join([str(x) for x in VERSION]),
+    keywords=('farmhash', 'google'),
     description="Google FarmHash Bindings for Python",
+    long_description=open('README.md', 'r').read(),
+    data_files=[
+        'README.md',
+    ],
     author='Veelion Chong',
     author_email='veelion@gmail.com',
     url='https://github.com/veelion/python-farmhash',
