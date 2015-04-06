@@ -44,7 +44,7 @@
 #define FARM_HASH_H_
 
 #include <assert.h>
-#include <stdint.h>
+#include "stdint.h"
 #include <stdlib.h>
 #include <string.h>   // for memcpy and memset
 #include <utility>
