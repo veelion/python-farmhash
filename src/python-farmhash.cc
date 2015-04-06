@@ -33,7 +33,7 @@ py_farmhash_Hash32(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
 
     if (!PyArg_ParseTuple(args, "s", &s))
         return NULL;
@@ -50,7 +50,7 @@ py_farmhash_Hash32WithSeed(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
     uint32_t seed;
 
     if (!PyArg_ParseTuple(args, "sI", &s, &seed))
@@ -68,7 +68,7 @@ py_farmhash_Hash64(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
 
     if (!PyArg_ParseTuple(args, "s", &s))
         return NULL;
@@ -91,7 +91,7 @@ py_farmhash_Hash64WithSeed(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
     uint64_t seed;
 
     if (!PyArg_ParseTuple(args, "sK", &s, &seed))
@@ -114,7 +114,7 @@ py_farmhash_Hash128(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
 
     if (!PyArg_ParseTuple(args, "s", &s))
         return NULL;
@@ -133,7 +133,7 @@ py_farmhash_Hash128WithSeed(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
     uint64_t seedlow64;
     uint64_t seedhigh64;
 
@@ -157,7 +157,7 @@ py_farmhash_Fingerprint32(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
 
     if (!PyArg_ParseTuple(args, "s", &s))
         return NULL;
@@ -174,7 +174,7 @@ py_farmhash_Fingerprint64(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
 
     if (!PyArg_ParseTuple(args, "s", &s))
         return NULL;
@@ -197,7 +197,7 @@ py_farmhash_Fingerprint128(PyObject *self, PyObject *args)
 {
     PyObject *result;
     const char *s;
-    size_t len;
+    Py_ssize_t len;
 
     if (!PyArg_ParseTuple(args, "s", &s))
         return NULL;
