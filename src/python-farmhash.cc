@@ -152,6 +152,64 @@ py_farmhash_Hash128WithSeed(PyObject *self, PyObject *args)
     return result;
 }
 
+static PyObject *
+py_farmhash_Fingerprint32(PyObject *self, PyObject *args)
+{
+    PyObject *result;
+    const char *s;
+    size_t len;
+
+    if (!PyArg_ParseTuple(args, "s", &s))
+        return NULL;
+
+    len = strlen(s);
+    uint32_t h = Fingerprint32(s, len);
+    result = Py_BuildValue("I", h);
+
+    return result;
+}
+
+static PyObject *
+py_farmhash_Fingerprint64(PyObject *self, PyObject *args)
+{
+    PyObject *result;
+    const char *s;
+    size_t len;
+
+    if (!PyArg_ParseTuple(args, "s", &s))
+        return NULL;
+    len = strlen(s);
+
+    len = strlen(s);
+    uint64_t h = Fingerprint64(s, len);
+# if __WORDSIZE == 64
+    const char* int_param = "k";
+# else
+    const char* int_param = "K";
+#endif
+    result = Py_BuildValue(int_param, h);
+
+    return result;
+}
+
+static PyObject *
+py_farmhash_Fingerprint128(PyObject *self, PyObject *args)
+{
+    PyObject *result;
+    const char *s;
+    size_t len;
+
+    if (!PyArg_ParseTuple(args, "s", &s))
+        return NULL;
+
+    len = strlen(s);
+    uint128_t h = Fingerprint128(s, len);
+    uint64_t low64 = Uint128Low64(h);
+    uint64_t high64 = Uint128High64(h);
+    result = Py_BuildValue("(KK)", low64, high64);
+
+    return result;
+}
 
 static PyMethodDef FarmHashMethods[] = {
     {"hash32",  py_farmhash_Hash32, METH_VARARGS, HASH32_DOCSTRING},
@@ -160,10 +218,11 @@ static PyMethodDef FarmHashMethods[] = {
     {"hash64withseed",  py_farmhash_Hash64WithSeed, METH_VARARGS, HASH64WITHSEED_DOCSTRING},
     {"hash128",  py_farmhash_Hash128, METH_VARARGS, HASH128_DOCSTRING},
     {"hash128withseed",  py_farmhash_Hash128WithSeed, METH_VARARGS, HASH128WITHSEED_DOCSTRING},
+    {"fingerprint32",  py_farmhash_Fingerprint32, METH_VARARGS, FINGERPRINT32_DOCSTRING},
+    {"fingerprint64",  py_farmhash_Fingerprint64, METH_VARARGS, FINGERPRINT64_DOCSTRING},
+    {"fingerprint128",  py_farmhash_Fingerprint128, METH_VARARGS, FINGERPRINT128_DOCSTRING},
     {NULL, NULL, 0, NULL}
 };
-
-
 
 struct module_state {
     PyObject *error;

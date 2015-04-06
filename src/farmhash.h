@@ -47,8 +47,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>   // for memcpy and memset
-#include <algorithm>
-//#include <utility>
+#include <utility>
 
 #ifndef NAMESPACE_FOR_HASH_FUNCTIONS
 #define NAMESPACE_FOR_HASH_FUNCTIONS util
@@ -183,7 +182,7 @@ inline uint64_t Fingerprint(uint64_t x) {
 // (as a const char*) and that Str::length() return the string's length;
 // they work with std::string, for example.
 
-// Hash function for a byte array.  Most useful in 32-bit binaries.
+// Hash function for a byte array.
 // May change from time to time, may differ on different platforms, may differ
 // depending on NDEBUG.
 template <typename Str>
