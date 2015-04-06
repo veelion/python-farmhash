@@ -8,17 +8,12 @@ This package provides bindings for the [Google's FarmHash](http://code.google.co
 
 Code specific to this project is covered by [The MIT License](http://opensource.org/licenses/MIT)
 
+Forked on 2015.04.06 to add bindings for fingerprint functions.  Pull request submitted.
 Install
 =======
 Currently, clone the repo and:
 > $ cd python-farmhash  
 > $ sudo python setup.py Install  
-
-
-The package was hosted on [PyPI](http://pypi.python.org/pypi/pyfarmhash)
-
-> $ pip install pyfarmhash  
-> $ easy_install pyfarmhash  
 
 Usage
 =====
