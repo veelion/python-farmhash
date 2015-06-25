@@ -262,7 +262,7 @@ static struct PyModuleDef moduledef = {
 
 #define INITERROR return NULL
 
-PyObject *
+extern "C" PyObject *
 PyInit_farmhash(void)
 
 #else
