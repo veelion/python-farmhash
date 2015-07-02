@@ -11,9 +11,6 @@ setup(
     keywords=('farmhash', 'google'),
     description="Google FarmHash Bindings for Python",
     long_description=open('README.md', 'r').read(),
-    data_files=[
-        'README.md',
-    ],
     author='Veelion Chong',
     author_email='veelion@gmail.com',
     url='https://github.com/veelion/python-farmhash',
