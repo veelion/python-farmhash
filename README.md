@@ -13,6 +13,9 @@ Install
 =======
 Currently, clone the repo and:
 
+pip:
+> $ sudo pip install pyfarmhash  
+
 Linux:
 > $ cd python-farmhash  
 > $ sudo python setup.py Install  
@@ -33,7 +36,7 @@ Usage
 =====
 The library is pretty simple to use:
 
-> import farmhash
+> import farmhash  
 > print farmhash.hash64('abc')  
 > 2640714258260161385  
 
