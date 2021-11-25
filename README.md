@@ -9,6 +9,7 @@ This package provides bindings for the [Google's FarmHash](http://code.google.co
 Code specific to this project is covered by [The MIT License](http://opensource.org/licenses/MIT)
 
 Forked on 2015.04.06 to add bindings for fingerprint functions.  Pull request submitted.
+
 Install
 =======
 Currently, clone the repo and:
@@ -18,7 +19,9 @@ pip:
 
 Linux:
 > $ cd python-farmhash  
-> $ sudo python setup.py Install  
+> $ sudo python setup.py Install 
+
+You need `g++` installed.
 
 Windows: 
 (Sheer hackery.  I'm sure there's a way to do this with the new VS but this is working and 
