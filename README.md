@@ -12,12 +12,14 @@ Forked on 2015.04.06 to add bindings for fingerprint functions.  Pull request su
 
 Install
 =======
+*Update*: Windows binary wheel uploaded to pypi
+
 Currently, clone the repo and:
 
-pip:
+pip(Linux & Windows):
 > $ sudo pip install pyfarmhash  
 
-Linux:
+From Source:
 > $ cd python-farmhash  
 > $ sudo python setup.py Install 
 

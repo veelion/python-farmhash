@@ -3,14 +3,13 @@
 
 from setuptools import setup, find_packages, Extension
 
-VERSION = (0, 2, 2)
+VERSION = (0, 3, 0)
 
 setup(
     name='pyfarmhash',
     version=".".join([str(x) for x in VERSION]),
     keywords=('farmhash', 'google'),
     description="Google FarmHash Bindings for Python",
-    long_description=open('README.md', 'r').read(),
     author='Veelion Chong',
     author_email='veelion@gmail.com',
     url='https://github.com/veelion/python-farmhash',
@@ -30,6 +29,8 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
 )
