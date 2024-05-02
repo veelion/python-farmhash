@@ -20,6 +20,8 @@
  * THE SOFTWARE.
  */
 
+// PY_SSIZE_T_CLEAN macro must be defined for '#' formats.
+#define PY_SSIZE_T_CLEAN
 
 #include <iostream>
 #include <Python.h>
@@ -35,10 +37,9 @@ py_farmhash_Hash32(PyObject *self, PyObject *args)
     const char *s;
     Py_ssize_t len;
 
-    if (!PyArg_ParseTuple(args, "s", &s))
+    if (!PyArg_ParseTuple(args, "s#", &s, &len))
         return NULL;
 
-    len = strlen(s);
     uint32_t h = Hash32(s, len);
     result = Py_BuildValue("I", h);
 
@@ -53,10 +54,9 @@ py_farmhash_Hash32WithSeed(PyObject *self, PyObject *args)
     Py_ssize_t len;
     uint32_t seed;
 
-    if (!PyArg_ParseTuple(args, "sI", &s, &seed))
+    if (!PyArg_ParseTuple(args, "s#I", &s, &len, &seed))
         return NULL;
 
-    len = strlen(s);
     uint32_t h = Hash32WithSeed(s, len, seed);
     result = Py_BuildValue("I", h);
 
@@ -70,11 +70,9 @@ py_farmhash_Hash64(PyObject *self, PyObject *args)
     const char *s;
     Py_ssize_t len;
 
-    if (!PyArg_ParseTuple(args, "s", &s))
+    if (!PyArg_ParseTuple(args, "s#", &s, &len))
         return NULL;
-    len = strlen(s);
 
-    len = strlen(s);
     uint64_t h = Hash64(s, len);
 # if __WORDSIZE == 64
     const char* int_param = "k";
@@ -94,10 +92,9 @@ py_farmhash_Hash64WithSeed(PyObject *self, PyObject *args)
     Py_ssize_t len;
     uint64_t seed;
 
-    if (!PyArg_ParseTuple(args, "sK", &s, &seed))
+    if (!PyArg_ParseTuple(args, "s#K", &s, &len, &seed))
         return NULL;
 
-    len = strlen(s);
     uint64_t h = Hash64WithSeed(s, len, seed);
 # if __WORDSIZE == 64
     const char* int_param = "k";
@@ -116,10 +113,9 @@ py_farmhash_Hash128(PyObject *self, PyObject *args)
     const char *s;
     Py_ssize_t len;
 
-    if (!PyArg_ParseTuple(args, "s", &s))
+    if (!PyArg_ParseTuple(args, "s#", &s, &len))
         return NULL;
 
-    len = strlen(s);
     uint128_t h = Hash128(s, len);
     uint64_t low64 = Uint128Low64(h);
     uint64_t high64 = Uint128High64(h);
@@ -137,12 +133,11 @@ py_farmhash_Hash128WithSeed(PyObject *self, PyObject *args)
     uint64_t seedlow64;
     uint64_t seedhigh64;
 
-    if (!PyArg_ParseTuple(args, "sKK", &s, &seedlow64, &seedhigh64))
+    if (!PyArg_ParseTuple(args, "s#KK", &s, &len, &seedlow64, &seedhigh64))
         return NULL;
 
     //std::cout << "seed low64:" << seedlow64 << std::endl;
     //std::cout << "seed high64:" << seedhigh64 << std::endl;
-    len = strlen(s);
     uint128_t seed = Uint128(seedlow64, seedhigh64);
     uint128_t h = Hash128WithSeed(s, len, seed);
     uint64_t low64 = Uint128Low64(h);
@@ -159,10 +154,9 @@ py_farmhash_Fingerprint32(PyObject *self, PyObject *args)
     const char *s;
     Py_ssize_t len;
 
-    if (!PyArg_ParseTuple(args, "s", &s))
+    if (!PyArg_ParseTuple(args, "s#", &s, &len))
         return NULL;
 
-    len = strlen(s);
     uint32_t h = Fingerprint32(s, len);
     result = Py_BuildValue("I", h);
 
@@ -176,11 +170,9 @@ py_farmhash_Fingerprint64(PyObject *self, PyObject *args)
     const char *s;
     Py_ssize_t len;
 
-    if (!PyArg_ParseTuple(args, "s", &s))
+    if (!PyArg_ParseTuple(args, "s#", &s, &len))
         return NULL;
-    len = strlen(s);
 
-    len = strlen(s);
     uint64_t h = Fingerprint64(s, len);
 # if __WORDSIZE == 64
     const char* int_param = "k";
@@ -199,10 +191,9 @@ py_farmhash_Fingerprint128(PyObject *self, PyObject *args)
     const char *s;
     Py_ssize_t len;
 
-    if (!PyArg_ParseTuple(args, "s", &s))
+    if (!PyArg_ParseTuple(args, "s#", &s, &len))
         return NULL;
 
-    len = strlen(s);
     uint128_t h = Fingerprint128(s, len);
     uint64_t low64 = Uint128Low64(h);
     uint64_t high64 = Uint128High64(h);
