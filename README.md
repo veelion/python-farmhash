@@ -52,7 +52,7 @@ For more details, use ipython:
 > Type:       builtin_function_or_method  
 > String Form:<built-in function hash64withseed>  
 > Docstring:  
-> Hash function for a string.  For convenience, a 64-bit seed is also hashed into the result.  
+> Hash function for a bytes-like object.  For convenience, a 64-bit seed is also hashed into the result.  
 > example: print farmhash.hash64withseed('abc', 12345)  
 > 13914286602242141520L  
 
