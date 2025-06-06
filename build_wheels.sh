@@ -8,5 +8,4 @@ docker run --rm -v "$(pwd)":/io quay.io/pypa/manylinux_2_34_x86_64 \
         "${PYBIN}/pip" wheel /io -w /tmp/wheels
     done
     auditwheel repair /tmp/wheels/*.whl -w /io/wheelhouse
-    chown -R '"$(id -u):$(id -g)"' /io/wheelhouse
 '
